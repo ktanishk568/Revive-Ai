@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* Custom fonts & global rules */
+@theme {
+  --color-gray-950: #07111F; /* Main Background */
+  --color-gray-900: #0B1728; /* Secondary Background */
+  --color-gray-800: #101D30; /* Card Background */
+  --color-gray-850: #14243A; /* Elevated Card */
+  --color-gray-700: #1F3047; /* Borders */
+  
+  --color-purple-600: #3B82F6; /* Primary brand accent: Electric blue */
+  --color-purple-500: #60A5FA; /* Hover primary */
+  --color-purple-400: #3B82F6; 
+  --color-purple-300: #93C5FD;
+  --color-purple-950: #132744; /* Active navigation background */
+  
+  --color-indigo-600: #22D3EE; /* Secondary AI accent: Cyan */
+  --color-indigo-500: #22D3EE;
+  --color-indigo-400: #22D3EE;
+  --color-indigo-300: #67E8F9;
+  --color-indigo-950: #0c2033; /* Selected AI tab background */
+  
+  --color-emerald-400: #10B981; /* Success: Emerald green */
+  --color-emerald-500: #10B981;
+  --color-emerald-600: #059669;
+  --color-emerald-950: #0a291f;
+  
+  --color-amber-400: #F59E0B; /* Warning: Amber */
+  --color-amber-500: #F59E0B;
+  --color-amber-950: #2d1f06;
+  
+  --color-rose-400: #EF4444; /* Error: Sophisticated red */
+  --color-rose-500: #EF4444;
+  --color-rose-950: #2d1012;
+  
+  --color-gray-200: #F8FAFC; /* Primary text */
+  --color-gray-400: #94A3B8; /* Secondary text */
+  --color-gray-500: #64748B; /* Muted text */
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Semantic tokens */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --bg-main: #07111F;
+  --bg-secondary: #0B1728;
+  --bg-card: #101D30;
+  --bg-elevated: #14243A;
+  
+  --border-premium: #1F3047;
+  
+  --brand-primary: #3B82F6;
+  --brand-ai: #22D3EE;
+  --brand-success: #10B981;
+  --brand-warning: #F59E0B;
+  --brand-danger: #EF4444;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-premium);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-elevated);
+}
+
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Tabular figures for financial numbers */
+.font-numeric {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Redesigned Premium Cards */
+.premium-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-premium);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.premium-border {
+  border-color: var(--border-premium);
+}
+
+/* Restrained accent indicators */
+.glow-primary {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.15);
+}
+
+.glow-ai {
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.15);
+}
+
+.glow-success {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+}
+
+/* Recharts tooltip overrides */
+.recharts-default-tooltip {
+  background-color: var(--bg-elevated) !important;
+  border: 1px solid var(--border-premium) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--text-secondary) !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* Styled select controls - removes generic browser arrows */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 0.9em;
+  padding-right: 2.25rem !important;
+}
+select:focus {
+  border-color: var(--brand-primary) !important;
+}
